@@ -1051,7 +1051,7 @@ class Instagram
         ->addPost('_csrftoken', $this->token)
         ->addPost('external_url', $url)
         ->addPost('phone_number', $phone)
-        ->addPost('username', $this->username)
+        ->addPost('username', strtolower($this->username))
         ->addPost('first_name', $first_name)
         ->addPost('biography', $biography)
         ->addPost('email', $email)
