@@ -1,11 +1,8 @@
 <?php
 
 /**
- *
- * Upload Album example (aka carousel aka sidecar)
- *
+ * Upload Album example (aka carousel aka sidecar).
  */
-
 include __DIR__.'/../vendor/autoload.php';
 require '../src/Instagram.php';
 
@@ -16,21 +13,21 @@ $debug = true;
 
 $photos = [
     [
-        'file' => '',
+        'file'     => '',
         'usertags' => [
             [
                 'position' => [0.5, 0.5],
-                'user_id' => 0
+                'user_id'  => 0,
             ],
-        ]
+        ],
     ], [
-        'file' => '',
+        'file'     => '',
         'usertags' => [
             [
                 'position' => [0.5, 0.5],
-                'user_id' => 0
+                'user_id'  => 0,
             ],
-        ]
+        ],
     ],
 ];
 

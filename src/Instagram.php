@@ -487,15 +487,16 @@ class Instagram
     }
 
     /**
-     * Uploads Album (aka Carousel aka Sidecar)
+     * Uploads Album (aka Carousel aka Sidecar).
      *
-     * @param array $photos Array of image metadata (path, usertags etc)
-     * @param null $caption Text for album
-     * @param null $location Geotag
-     * @param null $filter
+     * @param array $photos   Array of image metadata (path, usertags etc)
+     * @param null  $caption  Text for album
+     * @param null  $location Geotag
+     * @param null  $filter
+     *
+     * @throws InstagramException
      *
      * @return ConfigureResponse
-     * @throws InstagramException
      */
     public function uploadPhotoAlbum($photos, $caption = null, $location = null, $filter = null)
     {
@@ -520,7 +521,7 @@ class Instagram
         $uploadRequests = [];
         foreach ($photos as $photo) {
             $temp = [
-                'date_time_original' => $date,
+                'date_time_original'  => $date,
                 'scene_type'          => 1,
                 'disable_comments'    => false,
                 'upload_id'           => $photo['upload']->getUploadId(),
@@ -697,7 +698,7 @@ class Instagram
          ->addPost('upload_id', $upload_id)
          ->addPost('source_type', 'library')
          ->addPost('poster_frame_index', 0)
-         ->addPost('length',0.00)
+         ->addPost('length', 0.00)
          ->addPost('audio_muted', false)
          ->addPost('geotag_enabled', false)
          ->addPost('filter_type', '0')
